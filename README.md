@@ -79,8 +79,8 @@ Java와 PostgreSQL을 활용한 콘솔 기반 감정 일기 & 소비 기록 관�
 * JDBC를 활용한 PostgreSQL 연동
 * DAO 구조를 통한 DB 접근 로직 분리
 * CRUD와 SQL 통계 함수 활용
-
-🔗 Repository 바로가기: 추후 링크 추가
+* 
+🔗 [Repository 바로가기](https://github.com/Paengnyeon/thein_ProJ_MoodDiary_consol)
 
 ---
 
