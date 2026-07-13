@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>박진원 Portfolio</title>
+  <style>
+    :root {
+      --blue: #74c7ec;
+      --blue-dark: #2f9ed3;
+      --ink: #24323a;
+      --muted: #6b7d86;
+      --line: #e3edf2;
+      --paper: #ffffff;
+      --bg: #edf7fb;
+      --panel: #d6eef8;
+      --shadow: 0 14px 34px rgba(41, 109, 143, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #dff4fc 0%, var(--bg) 36%, #f8fcfe 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: var(--blue);
+      border-top: 7px solid var(--blue-dark);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 168px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .avatar {
+      width: 112px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      display: block;
+      object-fit: cover;
+      object-position: 55% 38%;
+      border: 5px solid rgba(255,255,255,0.32);
+      box-shadow: 0 10px 22px rgba(26, 94, 124, 0.28);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: 0;
+      line-height: 1.15;
+    }
+
+    .role {
+      margin: 6px 0 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .blog-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 4px;
+      background: #21323b;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      white-space: nowrap;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 44px auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .main,
+    .side {
+      display: grid;
+      gap: 24px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-inner {
+      padding: 28px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: #526a76;
+      font-size: 23px;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0;
+      color: #51656f;
+      font-size: 15px;
+    }
+
+    .entry + .entry {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry-title {
+      margin: 0 0 5px;
+      font-weight: 800;
+      color: #344b56;
+    }
+
+    .period {
+      color: var(--blue-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #5e737c;
+      font-size: 14px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--blue-dark);
+      flex: 0 0 auto;
+    }
+
+    .skills {
+      display: grid;
+      gap: 17px;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #526a76;
+    }
+
+    .level {
+      color: #9fb0b7;
+      font-weight: 700;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #edf3f6;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue-dark), #8ed8f5);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfdfe;
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: #344b56;
+    }
+
+    .project p {
+      font-size: 14px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--blue-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--panel);
+      color: #287fa9;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    footer {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto 36px;
+      color: #7d929b;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        min-height: auto;
+        padding: 28px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .wrap {
+        grid-template-columns: 1fr;
+        margin-top: 28px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner,
+      .wrap,
+      footer {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .profile {
+        gap: 16px;
+      }
+
+      .avatar {
+        width: 84px;
+        font-size: 26px;
+      }
+
+      .section-inner {
+        padding: 22px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="profile">
+          <img class="avatar" src="assets/logo.png" alt="Paengnyeon 로고">
+          <div>
+            <h1>박진원</h1>
+            <p class="role">Web Publisher & Java Backend Learner</p>
+          </div>
+        </div>
+        <a class="blog-button" href="https://github.com/Paengnyeon" aria-label="GitHub 방문">↗ GitHub 방문</a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="main">
+        <section>
+          <div class="section-inner">
+            <h2>About Me</h2>
+            <p>
+              사용자에게 보기 좋은 화면과 자연스러운 사용 흐름을 만드는 데 관심이 있습니다.
+              웹 퍼블리싱 감각을 바탕으로 Java / Spring 기반 웹 개발도 함께 학습하며,
+              UI와 기능 흐름을 함께 이해하는 웹 개발자로 성장하고 있습니다.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-inner">
+            <h2>Experience</h2>
+            <div class="entry">
+              <p class="entry-title">JSP/Servlet 웹 프로젝트 <span class="period">Team Project</span></p>
+              <p>메인 페이지 레이아웃, 공통 UI, banner/menu/navigation bar 구성과 게시판 데이터 출력 화면을 담당했습니다.</p>
+            </div>
+            <div class="entry">
+              <p class="entry-title">Spring MVC 쇼핑몰 프로젝트 <span class="period">Team Project</span></p>
+              <p>로그인/회원가입 화면, Ajax 아이디 중복 확인, 세션 기반 로그인 처리와 MyBatis 회원 DB 연동을 경험했습니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-inner">
+            <h2>Projects</h2>
+            <div class="project-grid">
+              <article class="project">
+                <h3>Share Diary</h3>
+                <p>개인 일기장, 공유 일기장, 교환 일기, 게시판 기능을 중심으로 구성한 JSP/Servlet 팀 프로젝트입니다.</p>
+                <div class="tags">
+                  <span class="tag">JSP</span>
+                  <span class="tag">Servlet</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">HTML/CSS</span>
+                </div>
+                <a class="project-link" href="https://github.com/Paengnyeon/jsp-share-diary-project">Repository 바로가기</a>
+              </article>
+              <article class="project">
+                <h3>Spring Shopping Mall</h3>
+                <p>회원가입, 로그인, 상품, 주문 흐름을 구현한 Spring MVC 기반 온라인 가구 쇼핑몰 프로젝트입니다.</p>
+                <div class="tags">
+                  <span class="tag">Spring MVC</span>
+                  <span class="tag">MyBatis</span>
+                  <span class="tag">MariaDB</span>
+                </div>
+                <a class="project-link" href="https://github.com/Paengnyeon/spring-shoppingmall-project">Repository 바로가기</a>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side">
+        <section>
+          <div class="section-inner">
+            <h2>Information</h2>
+            <ul class="info-list">
+              <li><span class="dot"></span><span>대한민국</span></li>
+              <li><span class="dot"></span><span>github.com/Paengnyeon</span></li>
+              <li><span class="dot"></span><span>Web Publishing</span></li>
+              <li><span class="dot"></span><span>Java / Spring 학습 중</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-inner">
+            <h2>Languages</h2>
+            <div class="skills">
+              <div>
+                <div class="skill-top"><span>HTML / CSS</span><span class="level">상</span></div>
+                <div class="bar"><span style="width: 84%"></span></div>
+              </div>
+              <div>
+                <div class="skill-top"><span>JavaScript</span><span class="level">중</span></div>
+                <div class="bar"><span style="width: 64%"></span></div>
+              </div>
+              <div>
+                <div class="skill-top"><span>JAVA</span><span class="level">중</span></div>
+                <div class="bar"><span style="width: 68%"></span></div>
+              </div>
+              <div>
+                <div class="skill-top"><span>JSP / Servlet</span><span class="level">중</span></div>
+                <div class="bar"><span style="width: 62%"></span></div>
+              </div>
+              <div>
+                <div class="skill-top"><span>Spring MVC</span><span class="level">학습</span></div>
+                <div class="bar"><span style="width: 54%"></span></div>
+              </div>
+              <div>
+                <div class="skill-top"><span>GitHub</span><span class="level">중</span></div>
+                <div class="bar"><span style="width: 62%"></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>© Portfolio. Paengnyeon</footer>
+  </div>
+</body>
+</html>
