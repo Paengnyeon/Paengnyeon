@@ -76,21 +76,7 @@ AI가 실제 음식점 후보를 추천한 뒤 투표와 최종 공지까지 이
 
 #### 주요 화면
 
-| 채팅방 기능 제안 | 날짜 선택 | 시간 선택 |
-|---|---|---|
-| <img src="docs/momeogji/01_chat_feature_prompt.png" alt="채팅방 기능 제안 화면" width="220"> | <img src="docs/momeogji/02_meeting_date.png" alt="모임 날짜 선택 화면" width="220"> | <img src="docs/momeogji/03_meeting_time.png" alt="모임 시간 선택 화면" width="220"> |
-
-| 장소 입력 | 지도 확인 | 참여 인원 |
-|---|---|---|
-| <img src="docs/momeogji/04_location_input.png" alt="장소 입력 화면" width="220"> | <img src="docs/momeogji/05_location_map.png" alt="지도 확인 화면" width="220"> | <img src="docs/momeogji/06_participant_count.png" alt="참여 인원 설정 화면" width="220"> |
-
-| 모임 목적 | 음식 선호 | 채팅방 결과 카드 |
-|---|---|---|
-| <img src="docs/momeogji/07_meeting_purpose.png" alt="모임 목적 설정 화면" width="220"> | <img src="docs/momeogji/08_food_preferences.png" alt="음식 선호 설정 화면" width="220"> | <img src="docs/momeogji/09_chat_result_card.png" alt="채팅방 추천 결과 카드" width="220"> |
-
-| 최종 공지 | 음식점 투표 | 전체 UI 흐름 |
-|---|---|---|
-| <img src="docs/momeogji/10_chat_notice.png" alt="최종 약속 공지 화면" width="220"> | <img src="docs/momeogji/11_restaurant_vote.png" alt="음식점 투표 화면" width="220"> | <img src="docs/momeogji/12_full_ui_flow.png" alt="모먹지 전체 UI 흐름" width="220"> |
+<img src="docs/momeogji/momeogji_ui_flow.png" alt="모먹지 주요 화면 전체 흐름" width="100%">
 
 #### 사용자 흐름
 
