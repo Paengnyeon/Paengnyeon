@@ -235,6 +235,42 @@
       background: #fbfdfe;
     }
 
+    .project-featured {
+      grid-column: 1 / -1;
+      padding: 0;
+      overflow: hidden;
+      border-color: #b9e4f5;
+      background: linear-gradient(135deg, #f7fcff 0%, #edf9fd 100%);
+    }
+
+    .project-featured-content {
+      padding: 22px;
+    }
+
+    .project-status {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--blue-dark);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .project-preview {
+      width: 100%;
+      display: block;
+      border-top: 1px solid #ccebf7;
+      background: #fff;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
     .project h3 {
       margin: 0 0 8px;
       font-size: 17px;
@@ -363,6 +399,27 @@
           <div class="section-inner">
             <h2>Projects</h2>
             <div class="project-grid">
+              <article class="project project-featured">
+                <div class="project-featured-content">
+                  <span class="project-status">최근 작업 · 진행 중</span>
+                  <h3>모먹지 (Momeogji)</h3>
+                  <p>채팅방에서 모임 조건을 모으고 AI 음식점 추천, 후보 투표, 최종 공지까지 하나의 흐름으로 연결하는 모임 음식점 추천 서비스입니다. React 기반 화면과 REST API CRUD를 담당하고 있습니다.</p>
+                  <div class="tags">
+                    <span class="tag">React 19</span>
+                    <span class="tag">Spring Boot 3</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">WebSocket</span>
+                    <span class="tag">OpenAI API</span>
+                    <span class="tag">Kakao Map API</span>
+                  </div>
+                  <div class="project-actions">
+                    <a class="project-link" href="https://github.com/kanell0304/thein_teamProj">Team Repository 바로가기</a>
+                    <a class="project-link" href="https://app.notion.com/p/39cdb803401e80439ff5ebceceaffdc9">프로젝트 문서 바로가기</a>
+                  </div>
+                </div>
+                <img class="project-preview" src="docs/momeogji/momeogji_ui_flow.png" alt="모먹지 주요 화면과 사용자 흐름">
+              </article>
               <article class="project">
                 <h3>Share Diary</h3>
                 <p>개인 일기장, 공유 일기장, 교환 일기, 게시판 기능을 중심으로 구성한 JSP/Servlet 팀 프로젝트입니다.</p>
