@@ -258,11 +258,39 @@
       font-weight: 800;
     }
 
-    .project-preview {
-      width: 100%;
-      display: block;
+    .project-gallery {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(175px, 1fr);
+      gap: 12px;
+      padding: 18px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
       border-top: 1px solid #ccebf7;
-      background: #fff;
+      background: #eef3f6;
+      scrollbar-color: var(--blue-dark) transparent;
+    }
+
+    .project-gallery figure {
+      margin: 0;
+      scroll-snap-align: start;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(35, 58, 69, 0.16);
+    }
+
+    .project-gallery figcaption {
+      margin-top: 8px;
+      color: #61757e;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
     }
 
     .project-actions {
@@ -350,6 +378,11 @@
       .project-grid {
         grid-template-columns: 1fr;
       }
+
+      .project-gallery {
+        grid-auto-columns: min(72vw, 235px);
+        padding: 14px;
+      }
     }
   </style>
 </head>
@@ -418,7 +451,28 @@
                     <a class="project-link" href="https://app.notion.com/p/39cdb803401e80439ff5ebceceaffdc9">프로젝트 문서 바로가기</a>
                   </div>
                 </div>
-                <img class="project-preview" src="docs/momeogji/momeogji_ui_flow.png" alt="모먹지 주요 화면과 사용자 흐름">
+                <div class="project-gallery" aria-label="모먹지 최신 주요 화면">
+                  <figure>
+                    <img src="docs/momeogji/latest/01-login.png" alt="모먹지 테스트 로그인 화면" loading="lazy">
+                    <figcaption>테스트 로그인</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="docs/momeogji/latest/02-chat.png" alt="모먹지 채팅방 화면" loading="lazy">
+                    <figcaption>채팅방</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="docs/momeogji/latest/03-location.png" alt="모먹지 장소 검색과 지도 선택 화면" loading="lazy">
+                    <figcaption>장소 선택</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="docs/momeogji/latest/04-preference.png" alt="모먹지 개인 음식 조건 입력 화면" loading="lazy">
+                    <figcaption>개인 조건 입력</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="docs/momeogji/latest/05-vote.png" alt="모먹지 AI 추천 음식점 투표 화면" loading="lazy">
+                    <figcaption>AI 추천 투표</figcaption>
+                  </figure>
+                </div>
               </article>
               <article class="project">
                 <h3>Share Diary</h3>
